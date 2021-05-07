@@ -17,7 +17,7 @@
 				type="radio" name="tab" class="for-pwd"><label for="tab-2"
 				class="tab">Forgot Password</label>
 			<div class="login-form">
-				<form method="post" action="listemployee.html">
+				<form method="post" action="/login">
 					<div class="sign-in-htm">
 						<div class="group">
 							<label for="user" class="label">Username or Email</label> <input
