@@ -68,21 +68,25 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public Integer save(Employee e) {
 		getCurrentSession().persist(e);
+		getCurrentSession().flush();
 		return null;
 	}
 	@Override
 	public Employee update(Employee e) {
 		getCurrentSession().refresh(e);
+		getCurrentSession().flush();
 		return null;
 	}
 	@Override
 	public void delete(Employee e) {
-	
+		getCurrentSession().clear();
+		getCurrentSession().flush();
 		
 	}
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+		getCurrentSession().find(entityClass, id);
+		getCurrentSession().flush();
 		
 	}
 
