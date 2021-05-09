@@ -1,12 +1,20 @@
 package fr.formation.afpa.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
-	public String firstName;
-	public String lastName;
-	public String title;
-	public int superiorId;
-	public int department;
-	public int startDate;
+	private String firstName;
+	private String lastName;
+	private String title;
+	private int superiorId;
+	private int department;
+	private int startDate;
+	@Id
+	@GeneratedValue
+	private int id;
 	
 	
 	public String getFirstName() {

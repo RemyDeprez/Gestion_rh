@@ -1,3 +1,4 @@
+<link href="style.css" rel="stylesheet">
 <footer>
 
 	<img style="width: 25px; height: 25px" src="en.jpg"> <img

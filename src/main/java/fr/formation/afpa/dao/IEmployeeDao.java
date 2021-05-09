@@ -1,18 +1,23 @@
 package fr.formation.afpa.dao;
 
-import java.io.Serializable;
 import java.util.List;
 
-public interface IEmployeeDao <T, I extends Serializable>{
-	T findById(I id);
-	List<T> findAll();
+import fr.formation.afpa.domain.Employee;
+
+public interface IEmployeeDao {
 	
+	//Read
+	Employee findById(Integer id);
+	List<Employee> findAll();
 	
-	T save(T t);
-	T saveOrUpdate(T t);
+	//Create
+	Integer save(Employee e);
 	
-	T update(T t);
+	//update
+	Employee update(Employee e);
 	
-	void delete(T t);
-	void deleteById(I id);
+	//delete
+	void delete(Employee e);
+	void deleteById(Integer id);
+
 }

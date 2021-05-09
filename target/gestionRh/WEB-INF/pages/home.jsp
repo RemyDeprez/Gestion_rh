@@ -6,7 +6,7 @@
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="/css/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 
 <jsp:include page="/pages/publicheader.jsp"/>
 <body>
@@ -17,7 +17,7 @@
 				type="radio" name="tab" class="for-pwd"><label for="tab-2"
 				class="tab">Forgot Password</label>
 			<div class="login-form">
-				<form method="post" action="listemployee.html">
+				<form method="post" action="/login">
 					<div class="sign-in-htm">
 						<div class="group">
 							<label for="user" class="label">Username or Email</label> <input

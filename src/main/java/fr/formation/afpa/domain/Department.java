@@ -1,8 +1,15 @@
 package fr.formation.afpa.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Department {
-	public int id;
-	public String department;
+	@Id
+	@GeneratedValue
+	private int id;
+	private String department;
 	public int getId() {
 		return id;
 	}
