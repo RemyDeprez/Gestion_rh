@@ -14,7 +14,7 @@ public class EmployeeDao implements IEmployeeDao {
 	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestionrh");
 	EntityManager em = emf.createEntityManager();
 	Employee emp = new Employee();
-	private EntityTransaction currentTransaction;
+	EntityTransaction currentTransaction;
 
 	
 	public void closeCurrentSession() {
@@ -58,27 +58,26 @@ public class EmployeeDao implements IEmployeeDao {
 	
 	@Override
 	public Employee findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return getCurrentSession().find(entityClass, id);
 	}
 	@Override
 	public List<Employee> findAll() {
-		// TODO Auto-generated method stub
+		getCurrentSession().createQuery("select t from "+entityClass.getSimpleName()+" t");
 		return null;
 	}
 	@Override
 	public Integer save(Employee e) {
-		// TODO Auto-generated method stub
+		getCurrentSession().persist(e);
 		return null;
 	}
 	@Override
 	public Employee update(Employee e) {
-		// TODO Auto-generated method stub
+		getCurrentSession().refresh(e);
 		return null;
 	}
 	@Override
 	public void delete(Employee e) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 	@Override
