@@ -10,85 +10,57 @@ import javax.persistence.Persistence;
 import fr.formation.afpa.domain.Employee;
 
 public class EmployeeDao implements IEmployeeDao {
-	private Class<Employee> entityClass;
-	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestionrh");
-	EntityManager em = emf.createEntityManager();
-	Employee emp = new Employee();
-	EntityTransaction currentTransaction;
-
+	private EntityManagerFactory emf;
+	private EntityManager em;
 	
-	public void closeCurrentSession() {
-		em.close();
-	}
-	public EntityManager getCurrentSession() {
-		return em;
-	}
-	public static EntityManagerFactory getEntityManagerFactory() {
-		return emf;
-	}
-	public EntityTransaction openCurrentSessionWithTx() {
-		em = getEntityManagerFactory().createEntityManager();
-		currentTransaction = em.getTransaction();
-		return currentTransaction;
+	public EmployeeDao() {
+		emf = Persistence.createEntityManagerFactory("employee");
+		em = emf.createEntityManager();
 	}
 	
-	public void closeCurrentSessionWithTx() {
-		currentTransaction.commit();
-		em.close();
+	public void beginTransaction() {
+		em = emf.createEntityManager();
+		em.getTransaction().begin();
+				
 	}
-	
-	public EntityManager openCurrentSession() {
-		em = getEntityManagerFactory().createEntityManager();
-		return em;
+	public void commitTransaction() {		
+		em.getTransaction().commit();
+		em.close();		
 	}
-	
-	
-	public EntityTransaction getCurrentTransaction() {
-		return currentTransaction;
-	}
-
-	public void setCurrentTransaction(EntityTransaction currentTransaction) {
-		this.currentTransaction = currentTransaction;
-	}
-
-	public void setCurrentSession(EntityManager currentSession) {
-		this.em = currentSession;
-	}
-
-	
 	@Override
-	public Employee findById(int id) {
-		currentTransaction.begin();
-		return getCurrentSession().find(entityClass, id);
+	public Employee findById(Integer id) {
+		return em.find(Employee.class, id);
 	}
+
 	@Override
 	public List<Employee> findAll() {
-		getCurrentSession().createQuery("select t from "+entityClass.getSimpleName()+" t");
-		return null;
+		beginTransaction();
+		return em.createQuery("select emp from Employee emp").getResultList();
 	}
+
 	@Override
 	public Integer save(Employee e) {
-		getCurrentSession().persist(e);
-		getCurrentSession().flush();
-		return null;
+		em.persist(e);
+		return e.getEmpId();
 	}
+
 	@Override
 	public Employee update(Employee e) {
-		getCurrentSession().refresh(e);
-		getCurrentSession().flush();
-		return null;
+		return em.merge(e);
+
 	}
+
 	@Override
 	public void delete(Employee e) {
-		getCurrentSession().clear();
-		getCurrentSession().flush();
 		
+		em.remove(e);
 	}
+
 	@Override
 	public void deleteById(Integer id) {
-		getCurrentSession().find(entityClass, id);
-		getCurrentSession().flush();
-		
+		Employee emp = findById(id);
+		delete(emp);
+
 	}
 
 
