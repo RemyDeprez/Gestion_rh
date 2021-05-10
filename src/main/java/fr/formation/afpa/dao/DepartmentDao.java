@@ -8,86 +8,60 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import fr.formation.afpa.domain.Department;
+import fr.formation.afpa.domain.Employee;
 
 public class DepartmentDao implements IDepartmentDao {
-	private Class<Department> entityClass;
-	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestionrh");
-	EntityManager em = emf.createEntityManager();
-	EntityTransaction currentTransaction;
+	private EntityManagerFactory emf;
+	private EntityManager em;
 
-	
-	public void closeCurrentSession() {
-		em.close();
-	}
-	public EntityManager getCurrentSession() {
-		return em;
-	}
-	public static EntityManagerFactory getEntityManagerFactory() {
-		return emf;
-	}
-	public EntityTransaction openCurrentSessionWithTx() {
-		em = getEntityManagerFactory().createEntityManager();
-		currentTransaction = em.getTransaction();
-		return currentTransaction;
+	public DepartmentDao() {
+		emf = Persistence.createEntityManagerFactory("department");
+		em = emf.createEntityManager();
 	}
 	
-	public void closeCurrentSessionWithTx() {
-		currentTransaction.commit();
-		em.close();
+	public void beginTransaction() {
+		em = emf.createEntityManager();
+		em.getTransaction().begin();
+				
 	}
-	
-	public EntityManager openCurrentSession() {
-		em = getEntityManagerFactory().createEntityManager();
-		return em;
+	public void commitTransaction() {		
+		em.getTransaction().commit();
+		em.close();		
 	}
-	
-	
-	public EntityTransaction getCurrentTransaction() {
-		return currentTransaction;
-	}
-
-	public void setCurrentTransaction(EntityTransaction currentTransaction) {
-		this.currentTransaction = currentTransaction;
-	}
-
-	public void setCurrentSession(EntityManager currentSession) {
-		this.em = currentSession;
-	}
-
-	
 	@Override
-	public Department findById(Integer id) {
-		return getCurrentSession().find(entityClass, id);
+	public Department findById(Integer id) {		
+		return em.find(Department.class, id);
 	}
+
 	@Override
 	public List<Department> findAll() {
-		getCurrentSession().createQuery("select t from "+entityClass.getSimpleName()+" t");
-		return null;
-	}
-	@Override
-	public Integer save(Department dpt) {
-		getCurrentSession().persist(dpt);
-		getCurrentSession().flush();
-		return null;
 		
+		return em.createQuery("select emp from Department emp").getResultList();
 	}
+
 	@Override
-	public Department update(Department dpt) {
-		getCurrentSession().refresh(dpt);
-		getCurrentSession().flush();
-		return null;
+	public Integer save(Department e) {
+		em.persist(e);
+		return e.getDeptId();
 	}
+
 	@Override
-	public void delete(Department dpt) {
-		getCurrentSession().clear();
-		getCurrentSession().flush();
+	public Department update(Department e) {
+		return em.merge(e);
+
+	}
+
+	@Override
+	public void delete(Department e) {
 		
+		em.remove(e);
 	}
+
 	@Override
 	public void deleteById(Integer id) {
-		getCurrentSession().find(entityClass, id);
-		getCurrentSession().flush();
-		
+		Department dept = findById(id);
+		delete(dept);
+
 	}
 
 }

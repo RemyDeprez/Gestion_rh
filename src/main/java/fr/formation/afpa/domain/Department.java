@@ -1,13 +1,12 @@
 package fr.formation.afpa.domain;
 // Generated 10 mai 2021 10:55:10 by Hibernate Tools 5.1.10.Final
 
-import java.util.HashSet;
-import java.util.Set;
+import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -29,8 +28,7 @@ public class Department implements java.io.Serializable {
 		this.name = name;
 	}
 
-
-
+	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 
@@ -42,7 +40,7 @@ public class Department implements java.io.Serializable {
 	public void setDeptId(Integer deptId) {
 		this.deptId = deptId;
 	}
-
+	
 	@Column(name = "NAME", nullable = false, length = 20)
 	public String getName() {
 		return this.name;

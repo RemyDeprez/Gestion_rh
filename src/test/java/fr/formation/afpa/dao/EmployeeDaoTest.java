@@ -1,5 +1,7 @@
 package fr.formation.afpa.dao;
 
+import static org.junit.Assert.*;
+
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +16,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import fr.formation.afpa.domain.Employee;
-import junit.framework.TestCase;
 
-public class EmployeeDaoTest extends TestCase {
+public class EmployeeDaoTest {
 	EmployeeDao dao = new EmployeeDao();
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
@@ -77,21 +78,18 @@ public class EmployeeDaoTest extends TestCase {
   	    Integer idInsert = emp.getEmpId();
  	    em.remove(emp);
  	    Employee empInsert = em.find(Employee.class, idInsert);
- 	    assertNull(idInsert);
+ 	    assertNull(empInsert);
  	 
 	}
 	@Test
 	public void testDeleteById() {
 		Employee emp = new Employee();
-		emp =dao.findById(2);
     	emp.setFirstName("remy");
     	emp.setLastName("remy");
-    	emp.setStartDate(new Date());
-    	em.persist(emp); 
-  	    Integer idInsert = emp.getEmpId();
- 	    em.remove(emp);
- 	    Employee empInsert = em.find(Employee.class, idInsert);
- 	    assertNotNull(idInsert);
+		Integer empId= emp.getEmpId();
+		em.remove(emp);
+		assertNull(emp.getEmpId());
+		
 	}
 	@After
 	public void after() {
