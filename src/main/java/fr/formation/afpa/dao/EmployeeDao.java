@@ -28,13 +28,13 @@ public class EmployeeDao implements IEmployeeDao {
 		em.close();		
 	}
 	@Override
-	public Employee findById(Integer id) {
+	public Employee findById(Integer id) {		
 		return em.find(Employee.class, id);
 	}
 
 	@Override
 	public List<Employee> findAll() {
-		beginTransaction();
+		
 		return em.createQuery("select emp from Employee emp").getResultList();
 	}
 

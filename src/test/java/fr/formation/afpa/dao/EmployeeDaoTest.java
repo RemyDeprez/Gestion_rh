@@ -1,38 +1,103 @@
 package fr.formation.afpa.dao;
 
+import java.util.Date;
 import java.util.List;
 
-import fr.formation.afpa.dao.EmployeeDao;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import fr.formation.afpa.domain.Employee;
 import junit.framework.TestCase;
 
 public class EmployeeDaoTest extends TestCase {
 	EmployeeDao dao = new EmployeeDao();
+	private static EntityManagerFactory emf;
+	private static EntityManager em;
 
+	@BeforeClass
+	public static void beforeClass() {
+		emf = Persistence.createEntityManagerFactory("employee");
+		em = emf.createEntityManager();
+	}
+	@Before
+	public void before() {
+		em.getTransaction().begin();
+	}
+
+	@Test
 	public void testFindById() {
 		Employee emp =dao.findById(2);
 		assertNotNull(emp);
-
 	}
-
+	@Test
 	public void testFindAll() {
-		fail("Not yet implemented");
+		List<Employee> list= dao.findAll();
+		assertNotNull(list);
+		
 	}
-
+	@Test
 	public void testSave() {
-		fail("Not yet implemented");
+		Employee emp = new Employee();
+    	emp.setFirstName("bobby");
+    	emp.setLastName("Remy");
+    	emp.setStartDate(new Date());
+    	em.persist(emp);    	
+    	
+    	assertNotNull(emp.getEmpId());
 	}
-
+	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		Employee emp = new Employee();
+    	emp.setFirstName("Remy");
+    	emp.setLastName("Remy");
+    	emp.setStartDate(new Date());
+    	em.persist(emp); 
+    	Integer idInsert = emp.getEmpId();
+    	emp.setFirstName("RemyTest");    	
+		Employee empUpdate = em.merge(emp);
+		assertNotNull(empUpdate);
+		Employee efind = em.find(Employee.class, idInsert);
+		assertEquals(empUpdate.getFirstName(), efind.getFirstName());
+		
 	}
-
+	@Test
 	public void testDelete() {
-		fail("Not yet implemented");
+		Employee emp = new Employee();
+    	emp.setFirstName("remy");
+    	emp.setLastName("remy");
+    	emp.setStartDate(new Date());
+    	em.persist(emp); 
+  	    Integer idInsert = emp.getEmpId();
+ 	    em.remove(emp);
+ 	    Employee empInsert = em.find(Employee.class, idInsert);
+ 	    assertNull(idInsert);
+ 	 
 	}
-
+	@Test
 	public void testDeleteById() {
-		fail("Not yet implemented");
+		Employee emp = new Employee();
+		emp =dao.findById(2);
+    	emp.setFirstName("remy");
+    	emp.setLastName("remy");
+    	emp.setStartDate(new Date());
+    	em.persist(emp); 
+  	    Integer idInsert = emp.getEmpId();
+ 	    em.remove(emp);
+ 	    Employee empInsert = em.find(Employee.class, idInsert);
+ 	    assertNotNull(idInsert);
 	}
-
-}
+	@After
+	public void after() {
+		em.getTransaction().rollback();
+	}
+	@AfterClass
+	public static void afterClass() {
+		emf.close();
+	}}
