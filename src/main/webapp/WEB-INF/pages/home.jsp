@@ -1,4 +1,7 @@
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -17,15 +20,16 @@
 				type="radio" name="tab" class="for-pwd"><label for="tab-2"
 				class="tab">Forgot Password</label>
 			<div class="login-form">
-				<form method="post" action="/login">
+				<form:form action="login" method="post" >
 					<div class="sign-in-htm">
 						<div class="group">
 							<label for="user" class="label">Username or Email</label> <input
-								id="user" type="text" class="input">
+								id="user" type="text" class="input" name ="login">
 						</div>
 						<div class="group">
-							<label for="pass" class="label">Password</label> <input id="pass"
-								type="password" class="input" data-type="password">
+							<label for="pass" class="label">Password</label> 
+							<input id="pass"
+								type="password" class="input" data-type="password" name="password">
 						</div>
 						<div class="group">
 							<input type="submit" class="button" value="Sign In">
@@ -42,7 +46,7 @@
 						</div>
 						<div class="hr"></div>
 					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

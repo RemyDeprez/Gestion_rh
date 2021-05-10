@@ -34,19 +34,23 @@ public class EmployeeDao implements IEmployeeDao {
 
 	@Override
 	public List<Employee> findAll() {
-		
+
 		return em.createQuery("select emp from Employee emp").getResultList();
 	}
 
 	@Override
 	public Integer save(Employee e) {
+	
 		em.persist(e);
+
 		return e.getEmpId();
 	}
 
 	@Override
 	public Employee update(Employee e) {
+	
 		return em.merge(e);
+		
 
 	}
 
