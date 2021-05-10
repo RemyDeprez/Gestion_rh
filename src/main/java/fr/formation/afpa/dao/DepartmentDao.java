@@ -69,6 +69,7 @@ public class DepartmentDao implements IDepartmentDao {
 		getCurrentSession().persist(dpt);
 		getCurrentSession().flush();
 		return null;
+		
 	}
 	@Override
 	public Department update(Department dpt) {

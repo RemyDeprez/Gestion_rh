@@ -9,6 +9,16 @@ public class Department {
 	@Id
 	@GeneratedValue
 	private int id;
+	
+	public Department() {
+		
+	}
+	
+	public Department(int id, String department) {
+		super();
+		this.id = id;
+		this.department = department;
+	}
 	private String department;
 	public int getId() {
 		return id;

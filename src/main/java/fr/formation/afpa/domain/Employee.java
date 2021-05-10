@@ -16,7 +16,23 @@ public class Employee {
 	@GeneratedValue
 	private int id;
 	
+	public Employee() {
+		
+	}
 	
+	
+	
+	public Employee(String firstName, String lastName, String title, int superiorId, int department, int startDate,
+			int id) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.title = title;
+		this.superiorId = superiorId;
+		this.department = department;
+		this.startDate = startDate;
+		this.id = id;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
