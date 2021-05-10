@@ -5,19 +5,25 @@ import java.util.List;
 import fr.formation.afpa.domain.Employee;
 
 public interface IEmployeeDao {
-	
-	//Read
+
+	// Read
 	Employee findById(Integer id);
+
 	List<Employee> findAll();
-	
-	//Create
+
+	// Create
 	Integer save(Employee e);
-	
-	//update
+
+	// update
 	Employee update(Employee e);
-	
-	//delete
+
+	// delete
 	void delete(Employee e);
+
 	void deleteById(Integer id);
+
+	void beginTransaction();
+
+	void commitTransaction();
 
 }

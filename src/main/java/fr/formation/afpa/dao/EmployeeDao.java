@@ -7,8 +7,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.springframework.stereotype.Repository;
+
 import fr.formation.afpa.domain.Employee;
 
+@Repository
 public class EmployeeDao implements IEmployeeDao {
 	private EntityManagerFactory emf;
 	private EntityManager em;

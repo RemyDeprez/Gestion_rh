@@ -7,9 +7,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.springframework.stereotype.Repository;
+
 import fr.formation.afpa.domain.Department;
 import fr.formation.afpa.domain.Employee;
 
+@Repository
 public class DepartmentDao implements IDepartmentDao {
 	private EntityManagerFactory emf;
 	private EntityManager em;
