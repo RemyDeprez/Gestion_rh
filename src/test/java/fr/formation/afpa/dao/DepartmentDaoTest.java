@@ -17,7 +17,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import fr.formation.afpa.domain.Department;
-import fr.formation.afpa.domain.Employee;
 
 public class DepartmentDaoTest {
 	DepartmentDao dao = new DepartmentDao();
@@ -55,10 +54,10 @@ public class DepartmentDaoTest {
 	@Test
 	public void testUpdate() {
 		Department dept = new Department();
-		dept.setDeptId(2);
+		dept.setName("yo");
     	em.persist(dept); 
     	Integer idInsert = dept.getDeptId();
-    	dept.setName("yo");    	
+    	dept.setName("yoyo");    	
     	Department deptUpdate = em.merge(dept);
 		assertNotNull(deptUpdate);
 		Department efind = em.find(Department.class, idInsert);
