@@ -1,36 +1,44 @@
 package fr.formation.afpa.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Department {
 	@Id
+	@OneToMany
 	@GeneratedValue
+	@Column(name= "DEPT_ID")
 	private int id;
+	@Column(name = "NAME")
+	private String name;
 	
+	public Department(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Department() {
 		
 	}
-	
-	public Department(int id, String department) {
-		super();
-		this.id = id;
-		this.department = department;
-	}
-	private String department;
-	public int getId() {
+
+	public int getDptId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setDptId(int id) {
 		this.id = id;
-	}
-	public String getDepartment() {
-		return department;
-	}
-	public void setDepartment(String department) {
-		this.department = department;
 	}
 	
 	

@@ -57,7 +57,8 @@ public class EmployeeDao implements IEmployeeDao {
 
 	
 	@Override
-	public Employee findById(Integer id) {
+	public Employee findById(int id) {
+		currentTransaction.begin();
 		return getCurrentSession().find(entityClass, id);
 	}
 	@Override

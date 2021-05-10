@@ -1,10 +1,10 @@
-package fr.formation.afpa.tests;
+package fr.formation.afpa.dao;
 
 import fr.formation.afpa.domain.Employee;
 import junit.framework.TestCase;
 
 public class EmployeeTest extends TestCase {
-
+	
 
 
 	public void testGetFirstName() {
@@ -37,8 +37,8 @@ public class EmployeeTest extends TestCase {
 
 	public void testGetDepartment() {
 		Employee emp = new Employee();
-		emp.setDepartment(2);
-		assertEquals(emp.getDepartment(), 2);
+		emp.setDepartmentId(2);
+		assertEquals(emp.getDepartmentId(), 2);
 	}
 
 	

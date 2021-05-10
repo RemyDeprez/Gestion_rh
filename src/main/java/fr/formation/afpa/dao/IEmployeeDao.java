@@ -7,7 +7,7 @@ import fr.formation.afpa.domain.Employee;
 public interface IEmployeeDao {
 	
 	//Read
-	Employee findById(Integer id);
+	Employee findById(int id);
 	List<Employee> findAll();
 	
 	//Create
