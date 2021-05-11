@@ -58,7 +58,9 @@
 								<td><c:out value="${listEmployee.firstName}" /></td>
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
-								<td><c:out value="${listEmployee.title}" /></td>	
+								<td><c:out value="${listEmployee.title}" /></td>
+								<td></td>
+								<td></td>	
 								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
 								<%-- <td><c:out value="${listEmployee.employee}" /></td> --%>
 							<td class="text-center"><a class='btn btn-info btn-xs'

@@ -39,19 +39,17 @@
             <c:forEach items="${listEmployee}" var="listEmployee">
             <tbody>
               <tr>
-                <td>3</td>
-                        <td><c:out value="${listEmployee.empId}" /></td>
+                                <td><c:out value="${listEmployee.empId}" /></td>
 								<td><c:out value="${listEmployee.firstName}" /></td>
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>
+								<td></td>
                         <td>
                             <select id="cars" name="cars">
                               <option value="rere"></option>
-                              <option value="volvo">Bobby</option>
-                              <option value="saab">Billy</option>
-                              <option value="fiat">Johny</option>
-                              <option value="audi">Tony</option>
+                              <option value="volvo">Susan</option>
+                              <option value="saab">John</option>
                             </select>
                         </td>
               </tr>
@@ -67,6 +65,5 @@
       </div> <!-- /widget -->
             </div></body>
 <footer>
-
 <jsp:include page="footer.jsp"/>
 </footer>

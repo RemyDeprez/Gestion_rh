@@ -119,7 +119,7 @@ public class ListController {
 	
 	
 	@PostMapping("/save")
-	public String save(@ModelAttribute("employee") Employee employee,  ModelMap model, BindingResult result) {
+	public String save(@ModelAttribute("employee") Employee employee,  ModelMap model) {
 		
 		Employee emp = new Employee();
 		model.addAttribute("firstName", employee.getFirstName());

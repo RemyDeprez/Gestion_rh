@@ -49,7 +49,7 @@
 								id="subject" name="subject" placeholder="Superior" />
 						</div>
 						<input type="Submit" id="submit"
-							class="btn btn-primary pull-right">Submit Form
+							class="btn btn-primary pull-right">
 					</form:form>
 				</div>
 			</div>
