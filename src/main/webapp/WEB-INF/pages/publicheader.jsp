@@ -12,12 +12,12 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item "><a class="nav-link" href="index.html">
+				<li class="nav-item "><a class="nav-link" href="gethome">
 						<i class="fa fa-home"></i> Home </li>
-				<li class="nav-item"><a class="nav-link" href="contact.html">
+				<li class="nav-item"><a class="nav-link" href="getcontact">
 						<i class="fa fa-envelope-o"> </i> Contact
 				</a></li>
-				<li class="nav-item"><a class="nav-link " href="whoami.html">
+				<li class="nav-item"><a class="nav-link " href="getwho">
 						<i class="fa fa-envelope-o"> </i> Who am I ?
 				</a></li>
 		</div>
