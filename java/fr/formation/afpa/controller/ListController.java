@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import fr.formation.afpa.domain.Employee;
 import fr.formation.afpa.service.EmployeeService;
@@ -37,6 +38,8 @@ public class ListController {
 		System.out.println(list);
 		return "globallist";
 	}
+	
+	
 	//methode lancée au click de l'action "ajout d'employee"
 	@GetMapping("/addemployee")
 	public String addEmployee(Model model) {

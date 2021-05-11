@@ -24,9 +24,9 @@
 		<div class="widget stacked widget-table action-table"
 			style="width: 80%; margin: auto; padding-top: 5%;">
 			<div class="widget-header">
-				<form method="POST" action="/addemployee">
-					<button class="btn btn-info float-right" type="submit">Add
-						an Employee</button>
+				<form method="get" action="/addemployee">
+					<a href="addemployee" class="btn btn-info float-right" type="submit" >Add
+						an Employee</a>
 				</form>
 				<i class="icon-th-list"></i>
 			</div>
