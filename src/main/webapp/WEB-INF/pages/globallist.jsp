@@ -13,9 +13,9 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<link href="/style/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 
-<jsp:include page="publicheader.jsp" />
+<jsp:include page="header.jsp" />
 <h3 style="margin-top: 25px; text-align: center;">Global List</h3>
 <body>
 	<div class="btn-toolbar"></div>
@@ -24,7 +24,7 @@
 		<div class="widget stacked widget-table action-table"
 			style="width: 80%; margin: auto; padding-top: 5%;">
 			<div class="widget-header">
-				<form method="POST" action="addemployee.html">
+				<form method="POST" action="/addemployee">
 					<button class="btn btn-info float-right" type="submit">Add
 						an Employee</button>
 				</form>
@@ -53,9 +53,10 @@
 							
          						<td><c:out value="${listEmployee.empId}" /></td>
 								<td><c:out value="${listEmployee.firstName}" /></td>
+								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>	
-								<%-- <td><c:out value="${listEmployee.department}" /></td>	 --%>						
+								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
 								<%-- <td><c:out value="${listEmployee.employee}" /></td> --%>
 							<td class="text-center"><a class='btn btn-info btn-xs'
 								href="updateemployee.html"><span

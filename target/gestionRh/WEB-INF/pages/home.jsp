@@ -11,9 +11,9 @@
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="/style/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 
-<jsp:include page="/pages/publicheader.jsp"/>
+<jsp:include page="publicheader.jsp"/>
 <body>
 	<div class="login-wrap">
 		<div class="login-html">
@@ -60,4 +60,4 @@
 		</div>
 	</div>
 </body>
-<jsp:include page="/pages/footer.jsp" />
+<jsp:include page="footer.jsp" />

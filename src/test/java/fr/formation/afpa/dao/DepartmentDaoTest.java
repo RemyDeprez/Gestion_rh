@@ -17,6 +17,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import fr.formation.afpa.domain.Department;
+import fr.formation.afpa.dao.DepartmentDao;
 
 public class DepartmentDaoTest {
 	DepartmentDao dao = new DepartmentDao();
