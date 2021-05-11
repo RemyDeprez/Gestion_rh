@@ -24,10 +24,10 @@
 		<div class="widget stacked widget-table action-table"
 			style="width: 80%; margin: auto; padding-top: 5%;">
 			<div class="widget-header">
-				<form method="get" action="/addemployee">
+				
 					<a href="addemployee" class="btn btn-info float-right" type="submit" >Add
 						an Employee</a>
-				</form>
+				
 				<i class="icon-th-list"></i>
 			</div>
 			<!-- /widget-header -->
@@ -49,7 +49,7 @@
 					</thead>
 					<c:forEach items="${listEmployee}" var="listEmployee">
 					<tbody>
-						<tr onclick="window.location='updateemployee.html'">
+						<tr >
 							
          						<td><c:out value="${listEmployee.empId}" /></td>
 								<td><c:out value="${listEmployee.firstName}" /></td>

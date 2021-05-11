@@ -16,41 +16,41 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="gethome">
           <i class="fa fa-home"></i>
           Home
           
       </li>
        <li class="nav-item ">
-        <a class="nav-link" href="listemployee.html">
+        <a class="nav-link" href="getlist">
           <i class="fa fa-home"></i>
           Total List
           
       </li>
             <li class="nav-item ">
-        <a class="nav-link" href="listManager.html">
+        <a class="nav-link" href="getmanager">
           <i class="fa fa-home"></i>
           Manager
       </li>
             <li class="nav-item ">
-        <a class="nav-link" href="listemployeeonly.html">
+        <a class="nav-link" href="getemployeeonly">
           <i class="fa fa-home"></i>
           Employee
       </li>
             <li class="nav-item ">
-        <a class="nav-link" href="settings.html">
+        <a class="nav-link" href="getsettings">
           <i class="fa fa-home"></i>
           Settings
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact.html">
+        <a class="nav-link" href="getcontact">
           <i class="fa fa-home">
           </i>
           Contact
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="whoami.html">
+        <a class="nav-link " href="getwho">
           <i class="fa fa-home">
           </i>
           Who am I ?
