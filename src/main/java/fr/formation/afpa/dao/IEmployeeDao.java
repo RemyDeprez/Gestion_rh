@@ -28,4 +28,6 @@ public interface IEmployeeDao {
 
 	List<Employee> findManager();
 
+	List<Employee> findEmployee();
+
 }

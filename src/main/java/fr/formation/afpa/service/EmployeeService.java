@@ -62,6 +62,13 @@ public class EmployeeService implements IEmployeeService {
 		dao.commitTransaction();
 		return listManager;
 	}
+	public List<Employee> findEmployee(){
+		dao.beginTransaction();
+		List<Employee> listEmployee  = dao.findEmployee();
+		dao.commitTransaction();
+		return listEmployee;
+		
+	}
 
 	public void deleteById(Integer id) {
 		dao.beginTransaction();

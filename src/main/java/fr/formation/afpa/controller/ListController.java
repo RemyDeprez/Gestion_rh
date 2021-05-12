@@ -53,6 +53,13 @@ public class ListController {
 		return "redirect:/";
 
 	}
+	@GetMapping("/getemployeeonly")
+	public String getEmployeeOnly(Model model) {
+		List<Employee> list = service.findEmployee();
+		model.addAttribute("listEmployee", list);
+		return "listemployeeonly";
+
+	}
 	
 	@GetMapping("/getmanager")
 	public String getGlobalList(Model model) {
@@ -86,13 +93,7 @@ public class ListController {
 		return "contact";
 
 	}
-	@GetMapping("/getemployeeonly")
-	public String getEmployeeOnly(Model model) {
-		List<Employee> list = service.findAll();
-		model.addAttribute("listEmployee", list);
-		return "listemployeeonly";
 
-	}
 	@GetMapping("/getsettings")
 	public String getSettings(Model model) {
 		List<Employee> list = service.findAll();
