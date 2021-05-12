@@ -139,7 +139,8 @@ public class ListController {
 		emp.setEmployee(employee.getEmployee());
 //		emp.setDepartment(employee.getDepartment());
 		service.save(emp);
-		
+		List<Employee> list = service.findAll();
+		model.addAttribute("listEmployee", list);
 		return "globallist";
 	}
 	
