@@ -32,10 +32,10 @@
 							<form:input type="text" class="form-control" path="lastName"
 								name="lastName" placeholder="Last Name" />
 						</div>
-						<%-- 						<div class="form-group">
+												<%-- <div class="form-group">
 							<form:input type="date" class="form-control" path="startDate"
 								name="startdate" placeholder="Start Date" />
-						</div>  --%>
+						</div>   --%>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
 								name="subject" placeholder="Title" />

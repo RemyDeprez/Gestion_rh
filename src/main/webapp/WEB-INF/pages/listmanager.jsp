@@ -27,11 +27,8 @@
 
 			<div class="widget-header">
 				<i class="icon-th-list"></i>
-				<form method="POST" action="addemployee.html">
-					<button class="btn btn-info float-right" type="submit">Add
-						an Employee</button>
-					<i class="bi bi-plus-circle-fill"></i>
-				</form>
+				<a href="addemployee" class="btn btn-info float-right" type="submit" >Add
+						an Employee</a>
 			</div>
 			<!-- /widget-header -->
 
