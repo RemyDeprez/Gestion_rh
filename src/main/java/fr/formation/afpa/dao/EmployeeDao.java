@@ -44,7 +44,7 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public List<Employee> findManager() {
 
-		return em.createQuery("select emp from Employee emp where title = 'President' and title = 'Vice President' and title = 'Head Teller'  ").getResultList();
+		return em.createQuery("select emp from Employee emp where title = 'President' or title = 'Vice President' or title = 'Head Teller'  ").getResultList();
 	}
 	
 	@Override

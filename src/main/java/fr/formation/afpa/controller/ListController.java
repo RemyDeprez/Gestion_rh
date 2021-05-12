@@ -56,7 +56,7 @@ public class ListController {
 	
 	@GetMapping("/getmanager")
 	public String getGlobalList(Model model) {
-		List<Employee> list = service.findAll();
+		List<Employee> list = service.findManager();
 		model.addAttribute("listEmployee", list);
 		System.out.println(list);
 		return "listmanager";
