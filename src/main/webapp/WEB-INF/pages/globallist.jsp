@@ -44,7 +44,7 @@
 							<th>Title</th>
 <!-- 						<th>Departement</th>
 							<th>Superior</th> -->
-							<th></th>
+							
 							<th class="td-actions">Actions</th>
 						</tr>
 					</thead>
@@ -58,7 +58,7 @@
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>	
 								
-								<td></td>
+								
 								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
 								<%-- <td><c:out value="${listEmployee.employee}" /></td> --%>
 							<td class="text-center"><a class='btn btn-info btn-xs'
