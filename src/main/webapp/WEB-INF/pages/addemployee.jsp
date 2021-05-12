@@ -25,29 +25,25 @@
 						<br style="clear: both">
 						<h3>Add an Employee</h3>
 						<div class="form-group">
-							<form:input type="text" class="form-control" id="name"
+							<form:input type="text" class="form-control" 
 								path="firstName" name="name" placeholder="First Name" />
 						</div>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="lastName"
-								id="email" name="email" placeholder="Last Name" />
+								 name="lastName" placeholder="Last Name" />
 						</div>
-						<div class="form-group">
+<%-- 						<div class="form-group">
 							<form:input type="date" class="form-control" path="startDate"
-								id="mobile" name="mobile" placeholder="Start Date" />
-						</div>
-						<div class="form-group">
+								name="startdate" placeholder="Start Date" />
+						</div>  --%>
+					 	<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
-								id="subject" name="subject" placeholder="Title" />
+								name="subject" placeholder="Title" />
 						</div>
-						<div class="form-group">
-							<form:input type="text" class="form-control" path="department"
-								id="subject" name="subject" placeholder="Departement" />
+ 						<div class="form-group">							<form:input type="text" class="form-control" path="department"
+								 name="subject" placeholder="Departement" />
 						</div>
-						<div class="form-group">
-							<form:input type="text" class="form-control" path="employee"
-								id="subject" name="subject" placeholder="Superior" />
-						</div>
+							<form:select path="employee" items="${managerList}" />
 						<input type="Submit" id="submit"
 							class="btn btn-primary pull-right">
 					</form:form>

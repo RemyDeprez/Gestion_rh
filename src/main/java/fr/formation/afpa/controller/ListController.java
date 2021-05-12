@@ -1,5 +1,6 @@
 package fr.formation.afpa.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,21 +125,23 @@ public class ListController {
 		Employee emp = new Employee();
 		model.addAttribute("firstName", employee.getFirstName());
 		model.addAttribute("lastName", employee.getLastName());
-		model.addAttribute("startDate", employee.getStartDate());
+		model.addAttribute("startDate", new Date());
 		model.addAttribute("title", employee.getTitle());
-		model.addAttribute("manager", employee.getEmployee());
+		model.addAttribute("employee", employee.getEmployee());
+//		model.addAttribute("department", employee.getDepartment());
 		
 		emp.setFirstName(employee.getFirstName());
 		System.out.println(emp);
 		System.out.println(employee);
 		emp.setLastName(employee.getLastName());
-		emp.setStartDate(employee.getStartDate());
+		emp.setStartDate(new Date());
 		emp.setTitle(employee.getTitle());
 		emp.setEmployee(employee.getEmployee());
-		
+//		emp.setDepartment(employee.getDepartment());
 		service.save(emp);
 		
 		return "globallist";
-
 	}
+	
+	
 }

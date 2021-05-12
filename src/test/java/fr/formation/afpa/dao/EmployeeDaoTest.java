@@ -1,6 +1,8 @@
 package fr.formation.afpa.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.Date;
 import java.util.List;
@@ -17,7 +19,7 @@ import org.junit.Test;
 
 import fr.formation.afpa.domain.Employee;
 
-public class EmployeeDaoTest {
+public class EmployeeDaoTest{
 	EmployeeDao dao = new EmployeeDao();
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
@@ -91,6 +93,14 @@ public class EmployeeDaoTest {
 		assertNull(emp.getEmpId());
 		
 	}
+	@Test
+	public void testFindManager() {
+		List <Employee> managerList = dao.findManager();
+		for (Employee employee : managerList) {
+			System.out.println(employee.getTitle());
+		}
+		assertNotNull(managerList);
+	}
 	@After
 	public void after() {
 		em.getTransaction().rollback();
@@ -98,4 +108,6 @@ public class EmployeeDaoTest {
 	@AfterClass
 	public static void afterClass() {
 		emf.close();
-	}}
+	}
+
+	}

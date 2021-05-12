@@ -26,4 +26,6 @@ public interface IEmployeeDao {
 
 	void commitTransaction();
 
+	List<Employee> findManager();
+
 }

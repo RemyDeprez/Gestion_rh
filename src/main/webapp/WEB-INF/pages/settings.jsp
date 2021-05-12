@@ -21,7 +21,7 @@
         <div class="widget-header">
           <i class="icon-th-list"></i>
         </div> <!-- /widget-header -->
-        
+        <form method="POST" action="updateemployee">
         <div class="widget-content">
           
           <table class="table table-striped table-bordered">
@@ -44,7 +44,8 @@
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>
-								<td></td>
+<%-- 								<td><c:out value="${listEmployee.department.name}"/></td>
+								<td><c:out value="${listEmployee.manager.empid}"/></td> --%>
                         <td>
                             <select id="cars" name="cars">
                               <option value="rere"></option>
@@ -60,10 +61,9 @@
             </table>
           
         </div> <!-- /widget-content -->
-      <form method="POST" action="listemployee.html">
+      
           <button id="settingbtn" class="btn btn-info float-right" type="submit">Update</button></form>
       </div> <!-- /widget -->
             </div></body>
-<footer>
+
 <jsp:include page="footer.jsp"/>
-</footer>

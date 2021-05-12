@@ -15,14 +15,13 @@ import fr.formation.afpa.domain.Employee;
 @Transactional
 public class EmployeeService implements IEmployeeService {
 	@Autowired
-	private IEmployeeDao dao ;
+	private IEmployeeDao dao;
 
-	
 	public IEmployeeDao getDao() {
 		return dao;
 	}
 
-	public Employee findById(Integer id) {	
+	public Employee findById(Integer id) {
 		dao.beginTransaction();
 		Employee dept = dao.findById(id);
 		dao.commitTransaction();
@@ -57,7 +56,13 @@ public class EmployeeService implements IEmployeeService {
 		dao.commitTransaction();
 	}
 
-	
+	public List<Employee> findManager() {
+		dao.beginTransaction();
+		List<Employee> listManager = dao.findManager();
+		dao.commitTransaction();
+		return listManager;
+	}
+
 	public void deleteById(Integer id) {
 		dao.beginTransaction();
 		Employee e = findById(id);
