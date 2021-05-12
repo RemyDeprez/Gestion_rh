@@ -58,9 +58,10 @@ public class ListController {
 	public String getGlobalList(Model model) {
 		List<Employee> list = service.findAll();
 		model.addAttribute("listEmployee", list);
+		System.out.println(list);
 		return "listmanager";
-
 	}
+	
 	@GetMapping("/getaddform")
 	public String getAddForm(Model model) {
 		List<Employee> list = service.findAll();
@@ -112,10 +113,21 @@ public class ListController {
 	
 	//methode lancée au click de l'action "ajout d'employee"
 	@GetMapping("/addemployee")
-	public String addEmployee(ModelMap modelMap) {
+	public String addEmployee(ModelMap modelMap, Model model) {
 		modelMap.addAttribute("employee", new Employee());
+		List<Employee> listManager = service.findManager();
+		model.addAttribute("listManager", listManager);
+		
 		return "addemployee";
 
+	}
+	@GetMapping("/deleteemployee")
+	public String deleteEmployee (@ModelAttribute("employee")Employee employee, ModelMap modelMap) {
+		
+		service.deleteById(employee.getEmpId());
+		
+		
+		return "globallist";
 	}
 	
 	

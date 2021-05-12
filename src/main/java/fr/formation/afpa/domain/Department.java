@@ -34,7 +34,7 @@ public class Department implements java.io.Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
+	
 	@Column(name = "DEPT_ID", unique = true, nullable = false)
 	public Integer getDeptId() {
 		return this.deptId;
