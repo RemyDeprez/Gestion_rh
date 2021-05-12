@@ -69,6 +69,13 @@ public class EmployeeService implements IEmployeeService {
 		return listEmployee;
 		
 	}
+	public List<Employee> findUnManaged(){
+		dao.beginTransaction();
+		List<Employee> listUnManaged  = dao.findUnManaged();
+		dao.commitTransaction();
+		return listUnManaged;
+		
+	}
 
 	public void deleteById(Integer id) {
 		dao.beginTransaction();

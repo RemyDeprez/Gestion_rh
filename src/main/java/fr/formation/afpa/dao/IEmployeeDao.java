@@ -30,4 +30,6 @@ public interface IEmployeeDao {
 
 	List<Employee> findEmployee();
 
+	List<Employee> findUnManaged();
+
 }

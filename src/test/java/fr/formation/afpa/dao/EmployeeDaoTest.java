@@ -101,6 +101,14 @@ public class EmployeeDaoTest{
 		}
 		assertNotNull(managerList);
 	}
+	@Test
+	public void testUnManaged() {
+		List <Employee> unManagedList = dao.findUnManaged();
+		for (Employee employee : unManagedList) {
+			System.out.println(employee.getTitle());
+		}
+		assertNotNull(unManagedList);
+	}
 	@After
 	public void after() {
 		em.getTransaction().rollback();

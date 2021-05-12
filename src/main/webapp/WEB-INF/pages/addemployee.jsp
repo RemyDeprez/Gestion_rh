@@ -44,13 +44,6 @@
 							<form:input type="text" class="form-control" path="department"
 								name="subject" placeholder="Departement" />
 						</div> --%>
-<%-- 						<form:select path="managerList" items="${employee}" />
-						<c:forEach items="${employee}" var="listManager">
-							<option value="employe.firstName">${employee.firstName}</option>
-
-
-
-						</c:forEach> --%>
 						<input type="Submit" id="submit"
 							class="btn btn-primary pull-right">
 					</form:form>

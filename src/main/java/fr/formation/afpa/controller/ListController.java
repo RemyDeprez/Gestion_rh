@@ -81,7 +81,8 @@ public class ListController {
 		List<Employee> list = service.findAll();
 		model.addAttribute("listEmployee", list);
 		return "updateemployee";
-
+		
+		
 	}
 	@GetMapping("/getwho")
 	public String getWho(Model model) {
@@ -96,8 +97,10 @@ public class ListController {
 
 	@GetMapping("/getsettings")
 	public String getSettings(Model model) {
-		List<Employee> list = service.findAll();
-		model.addAttribute("listEmployee", list);
+		List<Employee> list = service.findUnManaged();
+		model.addAttribute("listUnManaged", list);
+		List<Employee> list2 = service.findManager();
+		model.addAttribute("listManager", list2);
 		return "settings";
 
 	}

@@ -51,6 +51,12 @@ public class EmployeeDao implements IEmployeeDao {
 
 		return em.createQuery("select emp from Employee emp where title = 'Teller'").getResultList();
 	}
+	@Override
+	public List<Employee> findUnManaged() {
+
+		return em.createQuery("select emp from Employee emp where superior_emp_id is null").getResultList();
+	}
+	
 	
 	@Override
 	public Integer save(Employee e) {
