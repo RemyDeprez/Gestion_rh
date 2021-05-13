@@ -23,22 +23,22 @@
 				<div class="form-area">
 					<form:form id="monform" action="save" modelAttribute="employee">
 						<br style="clear: both">
-						<h3>Add an Employee</h3>
+						<h3>Update an Employee</h3>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="firstName"
-								name="name" placeholder="First Name" />
+								name="name" placeholder="${employee.firstName}" />
 						</div>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="lastName"
-								name="lastName" placeholder="Last Name" />
+								name="lastName" placeholder="${employee.lastName}" />
 						</div>
-						<%-- 						<div class="form-group">
+												<%-- <div class="form-group">
 							<form:input type="date" class="form-control" path="startDate"
 								name="startdate" placeholder="Start Date" />
-						</div>  --%>
+						</div>   --%>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
-								name="subject" placeholder="Title" />
+								name="subject" placeholder="${employee.title}" />
 						</div>
 <%-- 						<div class="form-group">
 							<form:input type="text" class="form-control" path="department"

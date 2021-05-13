@@ -20,25 +20,25 @@
 			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
 				for="tab-1" class="tab">Sign In</label> <input id="tab-2"
 				type="radio" name="tab" class="for-pwd"><label for="tab-2"
-				class="tab">Forgot Password</label>
+				class="tab">Forgot Username</label>
 			<div class="login-form">
 			
 			
 			
-			<a href="getlist">Connection</a>
+			<!-- <a href="getlist">Connection</a> -->
 			
 			
 			
-<%-- 				<form:form action="login" method="post" modelAttribute="string">
+ 				<form:form action="getlist" method="get" modelAttribute="string">
 					<div class="sign-in-htm">
 						<div class="group">
-							<label for="user" class="label">Username or Email</label> <form:input
-								id="user" type="text" class="input" name ="login" path="login"></form:input>
+							<label for="user" class="label">Username or Email</label> <input
+								id="user" type="text" class="input" name ="login" path="login"></input>
 						</div>
 						<div class="group">
 							<label for="pass" class="label">Password</label> 
-							<form:input id="pass"
-								type="password" class="input" data-type="password" name="password" path="password"></form:input>
+							<input id="pass"
+								type="password" class="input" data-type="password" name="password" path="password"></input>
 						</div>
 						<div class="group">
 							<input type="submit" class="button" value="Sign In">
@@ -55,7 +55,7 @@
 						</div>
 						<div class="hr"></div>
 					</div>
-				</form:form> --%>
+				</form:form> 
 			</div>
 		</div>
 	</div>

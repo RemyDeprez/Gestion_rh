@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.formation.afpa.dao.EmployeeDao;
 import fr.formation.afpa.dao.IEmployeeDao;
 import fr.formation.afpa.domain.Employee;
 
@@ -79,9 +78,10 @@ public class EmployeeService implements IEmployeeService {
 
 	public void deleteById(Integer id) {
 		dao.beginTransaction();
-		Employee e = findById(id);
+//		Employee e = findById(id);
+//		dao.delete(e);
+		dao.deleteById(id);
 		dao.commitTransaction();
-		dao.delete(e);
 
 	}
 }

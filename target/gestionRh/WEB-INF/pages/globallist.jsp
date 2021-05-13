@@ -42,8 +42,9 @@
 							<th>Last Name</th>
 							<th>Start Date</th>
 							<th>Title</th>
-							<th>Departement</th>
-							<th>Superior</th>
+ 	<!--						<th>Departement</th>--->
+							<th>Superior</th> 
+							
 							<th class="td-actions">Actions</th>
 						</tr>
 					</thead>
@@ -56,14 +57,24 @@
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>	
-								<td></td>
-								<td></td>
-								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
-								<%-- <td><c:out value="${listEmployee.employee}" /></td> --%>
-							<td class="text-center"><a class='btn btn-info btn-xs'
-								href="getupdateform" type ="submit"><span
-									class="glyphicon glyphicon-edit"></span> Edit</a> <a href="deleteemployee"class="btn btn-info float-right" type="submit">
-									Delete</a>
+								
+								
+<%-- 								<td><c:out value="${listEmployee.department.name}" /></td>	 --%> 				
+								 <td><c:out value="${listEmployee.employee.firstName}" /></td> 
+<%-- 							<td class="text-center"><a class='btn btn-info btn-xs'
+								href="updateemployee/${listEmployee.empId}"><span
+									class="glyphicon glyphicon-edit"></span> Edit</a>  --%>
+									<td>
+	<%-- 								<form action ="updateteemployee" method="post" path="employee">
+										<input type="text" value="${listEmployee}" style ="display:none">
+										<button type ="submit" class='btn btn-info btn-xs'>edit</button>
+									</form>
+									
+									
+									<form action ="deleteemployee" method="post">
+									<input type="text" value="${listEmployee}" style ="display:none">
+									<button type ="submit" class='btn btn-info btn-xs'>Delete</button>
+									</form></td> --%>
 						
 						</tr>
 					</tbody>

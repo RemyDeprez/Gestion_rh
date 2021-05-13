@@ -11,4 +11,7 @@ public interface IDepartmentDao {
 	public void deleteById(Integer id);
 	public List<Department> findAll();
 	public Department findById(Integer id);
+	void beginTransaction();
+
+	void commitTransaction();
 }

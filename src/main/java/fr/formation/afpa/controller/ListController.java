@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.formation.afpa.domain.Employee;
 import fr.formation.afpa.service.EmployeeService;
@@ -33,13 +35,6 @@ public class ListController {
 
 	}
 
-    
-    @RequestMapping(value  ="/save", method = RequestMethod.GET)
-    public String initAdd(ModelMap modelMap) {
-    	modelMap.addAttribute("employee", new Employee());
-		return null;
-    	
-    }
 
 	@GetMapping("/")
 	public String getHome(Model model) {
@@ -71,19 +66,10 @@ public class ListController {
 	
 	@GetMapping("/getaddform")
 	public String getAddForm(Model model) {
-		List<Employee> list = service.findAll();
-		model.addAttribute("listEmployee", list);
 		return "addemployee";
 
 	}
-	@GetMapping("/getupdateform")
-	public String getUpdateForm(Model model) {
-		List<Employee> list = service.findAll();
-		model.addAttribute("listEmployee", list);
-		return "updateemployee";
-		
-		
-	}
+	
 	@GetMapping("/getwho")
 	public String getWho(Model model) {
 		return "whoami";
@@ -114,7 +100,6 @@ public class ListController {
 		return "globallist";
 	}
 	
-	
 	//methode lancée au click de l'action "ajout d'employee"
 	@GetMapping("/addemployee")
 	public String addEmployee(ModelMap modelMap, Model model) {
@@ -125,13 +110,20 @@ public class ListController {
 		return "addemployee";
 
 	}
-	@GetMapping("/deleteemployee")
-	public String deleteEmployee (@ModelAttribute("employee")Employee employee, ModelMap modelMap) {
+	
+	@GetMapping("/updateemployee/{id}")
+	public String updateEmployee (@PathVariable int id , ModelMap modelMap) {
 		
-		service.deleteById(employee.getEmpId());
+		System.out.println(id);
+		service.deleteById(id);
+		return "test";
+	}
+	@GetMapping("/deleteemployee/{id}")
+	public String deleteEmployee (@PathVariable int id , ModelMap modelMap) {
 		
-		
-		return "globallist";
+		System.out.println(id);
+		service.deleteById(id);
+		return "redirect:/getemployeeonly";
 	}
 	
 	

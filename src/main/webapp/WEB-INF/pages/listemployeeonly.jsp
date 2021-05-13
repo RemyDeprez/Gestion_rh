@@ -37,8 +37,8 @@
 							<th>Last Name</th>
 							<th>Start Date</th>
 							<th>Title</th>
-<!-- 							<th>Departement</th>
-							<th>Superior</th> -->
+<!-- 							<th>Departement</th>--->
+							<!-- <th>Superior</th>  -->
 							<th class="td-actions">Actions</th>
 						</tr>
 					</thead>
@@ -54,12 +54,13 @@
 <!-- 								<td></td>
 								<td></td> -->
 								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
-								<%-- <td><c:out value="${listEmployee.employee}" /></td> --%>
-							<td class="text-center"><a class='btn btn-info btn-xs'
-								href="getupdateform"><span
-									class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
-								class="btn btn-danger btn-xs"><span
-									class="glyphicon glyphicon-remove"></span> Del</a></td>
+								<%--  <td><c:out value="${listEmployee.employee.firstName}" /></td>  --%>
+							<td class="text-center">
+							 <a class='btn btn-info btn-xs' href="updateemployee/${listEmployee.empId}">
+							 <span class="glyphicon glyphicon-edit"></span> Edit</a>
+							 <a href="deleteemployee/${listEmployee.empId}" class="btn btn-danger btn-xs">
+							 <span class="glyphicon glyphicon-remove"></span> Del</a>
+							</td>
 						</tr>
 					</tbody>
 					</c:forEach>
@@ -78,6 +79,6 @@
   <img style="width:25px;height:25px" src="en.jpg">
   <img style="width:25px;height:25px" src="fr.png">
 
-  <p>Â©AFPA 2020-2021</p>
+  <p>©AFPA 2020-2021</p>
 </footer>
 

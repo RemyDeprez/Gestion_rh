@@ -27,11 +27,8 @@
 
 			<div class="widget-header">
 				<i class="icon-th-list"></i>
-				<form method="POST" action="addemployee.html">
-					<button class="btn btn-info float-right" type="submit">Add
-						an Employee</button>
-					<i class="bi bi-plus-circle-fill"></i>
-				</form>
+				<a href="addemployee" class="btn btn-info float-right" type="submit" >Add
+						an Employee</a>
 			</div>
 			<!-- /widget-header -->
 
@@ -45,8 +42,8 @@
 							<th>Last Name</th>
 							<th>Start Date</th>
 							<th>Title</th>
-							<th>Departement</th>
-							<th>Superior</th>
+<!-- 							<th>Departement</th>--->
+							<!-- <th>Superior</th>  -->
 							<th class="td-actions">Actions</th>
 						</tr>
 					</thead>
@@ -59,10 +56,13 @@
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>
-								<td></td>
-								<td></td>	
-								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
-								<%-- <td><c:out value="${listEmployee.employee}" /></td> --%>
+<!-- 								<td></td>
+								<td></td -->
+								<%-- <td><c:out value="${listEmployee.department}" /></td> --%> 	
+								 				
+								 <%-- <td><c:out value="${listEmployee.employee.firstName}" /></td> --%>
+								 
+								 
 							<td class="text-center"><a class='btn btn-info btn-xs'
 								href="getupdateform"><span
 									class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"

@@ -49,7 +49,7 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public List<Employee> findEmployee() {
 
-		return em.createQuery("select emp from Employee emp where title = 'Teller'").getResultList();
+		return em.createQuery("select emp from Employee emp where title = 'Teller' or title = 'Loan Manager'  or title = 'Operations Manager' ").getResultList();
 	}
 	@Override
 	public List<Employee> findUnManaged() {
