@@ -21,29 +21,34 @@
 		<div class="container">
 			<div class="col-md-5">
 				<div class="form-area">
-					<form:form id="monform" action="save" modelAttribute="employee">
+					<form:form id="monform" action="doupdate" modelAttribute="employee">
 						<br style="clear: both">
 						<h3>Update an Employee</h3>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="firstName"
-								name="name" placeholder="${employee.firstName}" />
+								name="name" placeholder="${emp.firstName}" />
 						</div>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="lastName"
-								name="lastName" placeholder="${employee.lastName}" />
+								name="lastName" placeholder="${emp.lastName}" />
 						</div>
-												<%-- <div class="form-group">
+<%-- 												 <div class="form-group">
 							<form:input type="date" class="form-control" path="startDate"
-								name="startdate" placeholder="Start Date" />
-						</div>   --%>
+								name="startdate" placeholder="${emp.startDate}" /> 
+						</div>   --%> 
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
-								name="subject" placeholder="${employee.title}" />
+								name="subject" placeholder="${emp.title}" />
 						</div>
-<%-- 						<div class="form-group">
+						<div class="form-group">
+							<form:input type="text" class="form-control" path="empId"
+								name="subject" placeholder="${emp.empId}" />
+						</div>
+						
+ 						<div class="form-group">
 							<form:input type="text" class="form-control" path="department"
-								name="subject" placeholder="Departement" />
-						</div> --%>
+								name="subject" placeholder="${emp.department.name}" />
+						</div>  
 						<input type="Submit" id="submit"
 							class="btn btn-primary pull-right">
 					</form:form>

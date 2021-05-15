@@ -100,11 +100,12 @@ public class Employee implements java.io.Serializable {
 		return this.endDate;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", department=" + department + ", employee=" + employee + ", endDate="
-				+ endDate + ", firstName=" + firstName + ", lastName=" + lastName + ", startDate=" + startDate
-				+ ", title=" + title + ", assignedBranchId=" + assignedBranchId + ", employees=" + employees + "]";
+		return "Employee [empId=" + empId + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", startDate=" + startDate + ", title=" + title + "]";
 	}
 
 	public void setEndDate(Date endDate) {

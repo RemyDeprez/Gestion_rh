@@ -26,7 +26,7 @@ public class DepartmentDaoTest {
 
 	@BeforeClass
 	public static void beforeClass() {
-		emf = Persistence.createEntityManagerFactory("department");
+		emf = Persistence.createEntityManagerFactory("employee");
 		em = emf.createEntityManager();
 	}
 	@Before

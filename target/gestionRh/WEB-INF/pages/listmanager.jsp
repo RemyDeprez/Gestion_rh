@@ -9,7 +9,7 @@
 <title>Employees List</title>
 
 
-<%-- <jsp:include page="header.jsp"/>
+ <jsp:include page="header.jsp"/>
 
 <h3 style="margin-top: 25px; text-align: center;">Employee List</h3>
 <body>
@@ -37,7 +37,7 @@
 							<th>Last Name</th>
 							<th>Start Date</th>
 							<th>Title</th>
-<!-- 							<th>Departement</th>--->
+ 							<th>Departement</th>
 							<!-- <th>Superior</th>  -->
 							<th class="td-actions">Actions</th>
 						</tr>
@@ -51,9 +51,9 @@
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>	
-<!-- 								<td></td>
-								<td></td> -->
-								<td><c:out value="${listEmployee.department}" /></td>	 				
+								<td></td>
+								<td></td> 
+								<td><c:out value="${listEmployee.department.name}" /></td>	 				
 								 <td><c:out value="${listEmployee.employee.firstName}" /></td> 
 							<td class="text-center"><a class='btn btn-info btn-xs'
 								href="getupdateform"><span
@@ -79,6 +79,6 @@
   <img style="width:25px;height:25px" src="fr.png">
 
   <p>©AFPA 2020-2021</p>
-</footer> --%>
+</footer>
 
 

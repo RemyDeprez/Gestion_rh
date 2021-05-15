@@ -5,10 +5,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,24 +20,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.formation.afpa.domain.Employee;
+import fr.formation.afpa.service.DepartmentService;
 import fr.formation.afpa.service.EmployeeService;
 
 @Controller
 public class ListController {
 	
 	@Autowired
+	DepartmentService deptService;
+	@Autowired
 	
 	EmployeeService service;
 
 	@Autowired
-	public ListController(EmployeeService service) {
+	public ListController(EmployeeService service, DepartmentService deptService ) {
 		this.service = service;
+		this.deptService=deptService;
 	}
 
 	public ListController() {
 
 	}
-
 
 	@GetMapping("/")
 	public String getHome(Model model) {
@@ -56,8 +62,9 @@ public class ListController {
 
 	}
 	
-	@GetMapping("/getmanager")
+	@GetMapping(path="/listmanager")
 	public String getGlobalList(Model model) {
+		System.out.println("-------------------------getGlobalList-------------------------");
 		List<Employee> list = service.findManager();
 		model.addAttribute("listEmployee", list);
 		System.out.println(list);
@@ -97,6 +104,9 @@ public class ListController {
 		List<Employee> list = service.findAll();
 		model.addAttribute("listEmployee", list);
 		System.out.println(list);
+		System.out.println("test");
+		System.out.println(deptService.findAll());
+		
 		return "globallist";
 	}
 	
@@ -115,21 +125,12 @@ public class ListController {
 		return"updateemployee";
 	}
 	
-	
-	
-	
-	@PostMapping(path="/doupdate")
-	public String doUpdate(@ModelAttribute ("employee") Employee emp, ModelMap model) {
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		String formatteddate = simpleDateFormat.format(emp.getStartDate());
-		System.out.println(formatteddate);
-		model.addAttribute("firstName", emp.getFirstName());
-		model.addAttribute("lastName", emp.getLastName());
-		model.addAttribute("startDate", formatteddate);
-		model.addAttribute("title", emp.getTitle());
-		model.addAttribute("employee", emp.getEmployee());
-		service.update(emp);
-		return"listemployeeonly";
+	@RequestMapping(path="/doupdate", method=RequestMethod.POST)
+	public String doUpdate(@ModelAttribute Employee emp, ModelMap model) {
+		System.out.println(emp);
+		
+
+		return"redirect:/getemployeeonly";
 	}
 	
 	
@@ -147,7 +148,7 @@ public class ListController {
 		mv.setViewName("redirect:/getupdateform");
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		String formatteddate = simpleDateFormat.format(emp.getStartDate());
-		
+		System.out.println(formatteddate);
 		mv.addObject("startDate", formatteddate);
 
 		mv.addObject("empId", emp.getEmpId());
@@ -155,7 +156,8 @@ public class ListController {
 		mv.addObject("firstName", emp.getFirstName());
 		mv.addObject("lastName", emp.getLastName());
 		mv.addObject("department", emp.getDepartment());
-			return mv;
+		service.update(emp);
+		return mv;
 	}
 	@GetMapping("/deleteemployee/{id}")
 	public String deleteEmployee (@PathVariable int id , ModelMap modelMap) {

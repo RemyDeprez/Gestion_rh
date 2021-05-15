@@ -57,10 +57,10 @@
 								<td><c:out value="${listEmployee.lastName}" /></td>
 								<td><c:out value="${listEmployee.startDate}" /></td>
 								<td><c:out value="${listEmployee.title}" /></td>	
-								
+								<td><c:out value="${listEmployee.employee.firstName}" /></td> 
 								
 			
-								 <td><c:out value="${listEmployee.employee.firstName}" /></td> 
+								 
 							<td class="text-center"><a class='btn btn-info btn-xs'
 								href="updateemployee/${listEmployee.empId}"><span
 									class="glyphicon glyphicon-edit"></span> Edit</a>

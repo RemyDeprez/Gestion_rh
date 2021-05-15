@@ -18,7 +18,7 @@ public class DepartmentDao implements IDepartmentDao {
 	private EntityManager em;
 
 	public DepartmentDao() {
-		emf = Persistence.createEntityManagerFactory("department");
+		emf = Persistence.createEntityManagerFactory("employee");
 		em = emf.createEntityManager();
 	}
 	

@@ -28,7 +28,7 @@
           
       </li>
             <li class="nav-item ">
-        <a class="nav-link" href="getmanager">
+        <a class="nav-link" href="listmanager">
           <i class="fa fa-home"></i>
           Manager
       </li>

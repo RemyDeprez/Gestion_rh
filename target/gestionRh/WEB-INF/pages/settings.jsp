@@ -61,7 +61,7 @@
 										<option>Select a Manager</option>
 										<c:forEach items="${listManager}" var="listManager">
 											<option>
-												<c:out value="${listManager.firstName}" />
+												<c:out value="${listManager.firstName} ${listManager.lastName }" />
 											</option>
 										</c:forEach>		
 											</select></td>
