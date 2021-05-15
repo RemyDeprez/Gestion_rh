@@ -42,7 +42,7 @@
 							<th>Last Name</th>
 							<th>Start Date</th>
 							<th>Title</th>
- 	<!--						<th>Departement</th>--->
+
 							<th>Superior</th> 
 							
 							<th class="td-actions">Actions</th>
@@ -59,13 +59,13 @@
 								<td><c:out value="${listEmployee.title}" /></td>	
 								
 								
-<%-- 								<td><c:out value="${listEmployee.department.name}" /></td>	 --%> 				
+			
 								 <td><c:out value="${listEmployee.employee.firstName}" /></td> 
-<%-- 							<td class="text-center"><a class='btn btn-info btn-xs'
+							<td class="text-center"><a class='btn btn-info btn-xs'
 								href="updateemployee/${listEmployee.empId}"><span
-									class="glyphicon glyphicon-edit"></span> Edit</a>  --%>
+									class="glyphicon glyphicon-edit"></span> Edit</a>
 									<td>
-	<%-- 								<form action ="updateteemployee" method="post" path="employee">
+								<form action ="updateteemployee" method="post" path="employee">
 										<input type="text" value="${listEmployee}" style ="display:none">
 										<button type ="submit" class='btn btn-info btn-xs'>edit</button>
 									</form>
@@ -74,7 +74,7 @@
 									<form action ="deleteemployee" method="post">
 									<input type="text" value="${listEmployee}" style ="display:none">
 									<button type ="submit" class='btn btn-info btn-xs'>Delete</button>
-									</form></td> --%>
+									</form></td> 
 						
 						</tr>
 					</tbody>

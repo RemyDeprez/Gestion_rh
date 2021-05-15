@@ -9,7 +9,7 @@
 <title>Employees List</title>
 
 
-<jsp:include page="header.jsp"/>
+<%-- <jsp:include page="header.jsp"/>
 
 <h3 style="margin-top: 25px; text-align: center;">Employee List</h3>
 <body>
@@ -53,8 +53,8 @@
 								<td><c:out value="${listEmployee.title}" /></td>	
 <!-- 								<td></td>
 								<td></td> -->
-								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
-								<%--  <td><c:out value="${listEmployee.employee.firstName}" /></td>  --%>
+								<td><c:out value="${listEmployee.department}" /></td>	 				
+								 <td><c:out value="${listEmployee.employee.firstName}" /></td> 
 							<td class="text-center"><a class='btn btn-info btn-xs'
 								href="getupdateform"><span
 									class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
@@ -79,6 +79,6 @@
   <img style="width:25px;height:25px" src="fr.png">
 
   <p>©AFPA 2020-2021</p>
-</footer>
+</footer> --%>
 
 

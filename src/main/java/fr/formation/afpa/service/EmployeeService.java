@@ -78,8 +78,6 @@ public class EmployeeService implements IEmployeeService {
 
 	public void deleteById(Integer id) {
 		dao.beginTransaction();
-//		Employee e = findById(id);
-//		dao.delete(e);
 		dao.deleteById(id);
 		dao.commitTransaction();
 

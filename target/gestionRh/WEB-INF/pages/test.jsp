@@ -26,7 +26,7 @@
 						<h3>Test an Employee</h3>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="firstName"
-								name="name" placeholder="First Name" />
+								name="name" placeholder="${employee.firstName }" />
 						</div>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="lastName"
@@ -40,16 +40,6 @@
 							<form:input type="text" class="form-control" path="title"
 								name="subject" placeholder="Title" />
 						</div>
-						<div class="form-group">
-							<select id="managers" name="managers">
-								<option>Select a Manager</option>
-								<c:forEach items="${listManager}" var="listManager">
-									<option>
-										<c:out value="${listManager.firstName}" />
-									</option>
-								</c:forEach>
-							</select>
-							</div>
 							<%-- 						<div class="form-group">
 							<form:input type="text" class="form-control" path="department"
 								name="subject" placeholder="Departement" />

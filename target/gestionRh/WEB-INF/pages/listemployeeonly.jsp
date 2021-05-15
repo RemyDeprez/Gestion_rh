@@ -55,11 +55,12 @@
 								<td></td> -->
 								<%-- <td><c:out value="${listEmployee.department}" /></td> --%>	 				
 								<%--  <td><c:out value="${listEmployee.employee.firstName}" /></td>  --%>
-							<td class="text-center"><a class='btn btn-info btn-xs'
-								href="getupdateform"><span
-									class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
-								class="btn btn-danger btn-xs"><span
-									class="glyphicon glyphicon-remove"></span> Del</a></td>
+							<td class="text-center">
+							 <a class='btn btn-info btn-xs' href="updateemployee/${listEmployee.empId}">
+							 <span class="glyphicon glyphicon-edit"></span> Edit</a>
+							 <a href="deleteemployee/${listEmployee.empId}" class="btn btn-danger btn-xs">
+							 <span class="glyphicon glyphicon-remove"></span> Del</a>
+							</td>
 						</tr>
 					</tbody>
 					</c:forEach>

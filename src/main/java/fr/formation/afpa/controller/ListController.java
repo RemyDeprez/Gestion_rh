@@ -1,5 +1,6 @@
 package fr.formation.afpa.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -7,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import fr.formation.afpa.domain.Employee;
 import fr.formation.afpa.service.EmployeeService;
@@ -110,13 +110,52 @@ public class ListController {
 		return "addemployee";
 
 	}
+	@RequestMapping(path="/getupdateform", method=RequestMethod.GET)
+	public String getHome(@ModelAttribute Employee emp) {
+		return"updateemployee";
+	}
+	
+	
+	
+	
+	@PostMapping(path="/doupdate")
+	public String doUpdate(@ModelAttribute ("employee") Employee emp, ModelMap model) {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formatteddate = simpleDateFormat.format(emp.getStartDate());
+		System.out.println(formatteddate);
+		model.addAttribute("firstName", emp.getFirstName());
+		model.addAttribute("lastName", emp.getLastName());
+		model.addAttribute("startDate", formatteddate);
+		model.addAttribute("title", emp.getTitle());
+		model.addAttribute("employee", emp.getEmployee());
+		service.update(emp);
+		return"listemployeeonly";
+	}
+	
+	
+	
+	
+	
+	
 	
 	@GetMapping("/updateemployee/{id}")
-	public String updateEmployee (@PathVariable int id , ModelMap modelMap) {
+	public ModelAndView updateEmployee (@PathVariable Integer id , ModelMap modelMap) {
 		
 		System.out.println(id);
-		service.deleteById(id);
-		return "test";
+		Employee emp =service.findById(id);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/getupdateform");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String formatteddate = simpleDateFormat.format(emp.getStartDate());
+		
+		mv.addObject("startDate", formatteddate);
+
+		mv.addObject("empId", emp.getEmpId());
+		mv.addObject("title", emp.getTitle());
+		mv.addObject("firstName", emp.getFirstName());
+		mv.addObject("lastName", emp.getLastName());
+		mv.addObject("department", emp.getDepartment());
+			return mv;
 	}
 	@GetMapping("/deleteemployee/{id}")
 	public String deleteEmployee (@PathVariable int id , ModelMap modelMap) {
