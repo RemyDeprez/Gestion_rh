@@ -38,7 +38,7 @@
 							<th>Start Date</th>
 							<th>Title</th>
  							<th>Departement</th>
-							<!-- <th>Superior</th>  -->
+							<th>Superior</th>  
 							<th class="td-actions">Actions</th>
 						</tr>
 					</thead>
@@ -53,11 +53,12 @@
 								<td><c:out value="${manager.title}" /></td>	 
 								<td><c:out value="${manager.department.deptId}" /></td>	 				
 								<td><c:out value="${manager.employee.empId}" /></td>   
-							<td class="text-center"><a class='btn btn-info btn-xs'
-								href="getupdateform"><span
-									class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
-								class="btn btn-danger btn-xs"><span
-									class="glyphicon glyphicon-remove"></span> Del</a></td>
+								<td class="text-center">
+							 		<a class='btn btn-info btn-xs' href="updateemployee/${manager.empId}">
+							 		<span class="glyphicon glyphicon-edit"></span> Edit</a>
+							 		<a href="deleteemployee/${manager.empId}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">
+							 		<span class="glyphicon glyphicon-remove"></span> Del</a>
+								</td>
 						</tr>
 					</tbody>
 					</c:forEach>
