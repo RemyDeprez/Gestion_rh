@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,48 +19,48 @@
       <li class="nav-item ">
         <a class="nav-link" href="gethome">
           <i class="fa fa-home"></i>
-          Home
+          <spring:message code="label.home" />
           
       </li>
        <li class="nav-item ">
         <a class="nav-link" href="getlist">
           <i class="fa fa-home"></i>
-          Total List
+          <spring:message code="label.totallist" />
           
       </li>
             <li class="nav-item ">
         <a class="nav-link" href="listmanager">
           <i class="fa fa-home"></i>
-          Manager
+          <spring:message code="label.managerlist" />
       </li>
             <li class="nav-item ">
         <a class="nav-link" href="getemployeeonly">
           <i class="fa fa-home"></i>
-          Employee
+          <spring:message code="label.employeelist" />
       </li>
             <li class="nav-item ">
         <a class="nav-link" href="getsettings">
           <i class="fa fa-home"></i>
-          Settings
+          <spring:message code="label.settings" />
       </li>
       <li class="nav-item">
         <a class="nav-link" href="getcontact">
           <i class="fa fa-home">
           </i>
-          Contact
+          <spring:message code="label.contact" />
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="getwho">
           <i class="fa fa-home">
           </i>
-          Who am I ?
+          <spring:message code="label.who" />
         </a>
       </li>
       
     
   </div>
-  <button class="btn btn-outline-danger float-right" type="submit" >Disconnect</button>
+  <button class="btn btn-outline-danger float-right" type="submit" ><spring:message code="label.disconnect" /></button>
 </nav>
 </header>
 </body>
