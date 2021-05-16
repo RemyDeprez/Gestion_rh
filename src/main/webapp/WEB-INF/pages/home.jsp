@@ -18,9 +18,9 @@
 	<div class="login-wrap">
 		<div class="login-html">
 			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
-				for="tab-1" class="tab">Sign In</label> <input id="tab-2"
+				for="tab-1" class="tab"><spring:message code="label.signin" /></label> <input id="tab-2"
 				type="radio" name="tab" class="for-pwd"><label for="tab-2"
-				class="tab">Forgot Username</label>
+				class="tab"><spring:message code="label.forgotusername" /></label>
 			<div class="login-form">
 			
 			
@@ -32,26 +32,26 @@
  				<form:form action="getlist" method="get" modelAttribute="string">
 					<div class="sign-in-htm">
 						<div class="group">
-							<label for="user" class="label">Username or Email</label> <input
+							<label for="user" class="label"><spring:message code="label.useror" /></label> <input
 								id="user" type="text" class="input" name ="login" path="login"></input>
 						</div>
 						<div class="group">
-							<label for="pass" class="label">Password</label> 
+							<label for="pass" class="label"><spring:message code="label.password" /></label> 
 							<input id="pass"
 								type="password" class="input" data-type="password" name="password" path="password"></input>
 						</div>
 						<div class="group">
-							<input type="submit" class="button" value="Sign In">
+							<input type="submit" class="button" value="<spring:message code="label.signin" />">
 						</div>
 						<div class="hr"></div>
 					</div>
 					<div class="for-pwd-htm">
 						<div class="group">
-							<label for="user" class="label">Username or Email</label> <input
+							<label for="user" class="label"><spring:message code="label.useror" /></label> <input
 								id="user" type="text" class="input">
 						</div>
 						<div class="group">
-							<input type="submit" class="button" value="Reset Password">
+							<input type="submit" class="button" value="<spring:message code="label.reset" />">
 						</div>
 						<div class="hr"></div>
 					</div>

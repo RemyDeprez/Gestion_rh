@@ -41,7 +41,7 @@
 								name="subject" placeholder="Title" />
 						</div>
 						<div class="form-group">
-							<select id="managers" name="managers">
+							<select id="managers" name="managers" class="form-select" >
 								<option>Select a Manager</option>
 								<c:forEach items="${listManager}" var="listManager">
 									<option>

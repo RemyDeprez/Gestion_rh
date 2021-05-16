@@ -32,23 +32,19 @@
 							<form:input type="text" class="form-control" path="lastName"
 								name="lastName" placeholder="${emp.lastName}" />
 						</div>
-<%-- 												 <div class="form-group">
-							<form:input type="date" class="form-control" path="startDate"
+											 <div class="form-group">
+							<form:input type="text" class="form-control" path="startDate"
 								name="startdate" placeholder="${emp.startDate}" /> 
-						</div>   --%> 
+						</div>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
 								name="subject" placeholder="${emp.title}" />
 						</div>
-						<div class="form-group">
-							<form:input type="text" class="form-control" path="empId"
-								name="subject" placeholder="${emp.empId}" />
-						</div>
 						
- 						<div class="form-group">
+<%--  						<div class="form-group">
 							<form:input type="text" class="form-control" path="department"
 								name="subject" placeholder="${emp.department.name}" />
-						</div>  
+						</div>   --%>
 						<input type="Submit" id="submit"
 							class="btn btn-primary pull-right">
 					</form:form>

@@ -127,7 +127,13 @@ public class ListController {
 	
 	@RequestMapping(path="/doupdate", method=RequestMethod.POST)
 	public String doUpdate(@ModelAttribute Employee emp, ModelMap model) {
+		Integer id =emp.getEmpId();
+		System.out.println(id);
+		emp.setStartDate(new Date());
 		System.out.println(emp);
+		service.update(emp);
+		
+		
 		
 
 		return"redirect:/getemployeeonly";
@@ -146,17 +152,16 @@ public class ListController {
 		Employee emp =service.findById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:/getupdateform");
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		String formatteddate = simpleDateFormat.format(emp.getStartDate());
-		System.out.println(formatteddate);
-		mv.addObject("startDate", formatteddate);
-
+//		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//		String formatteddate = simpleDateFormat.format(emp.getStartDate());
+//		System.out.println(formatteddate);
+//		mv.addObject("startDate", formatteddate);
 		mv.addObject("empId", emp.getEmpId());
 		mv.addObject("title", emp.getTitle());
 		mv.addObject("firstName", emp.getFirstName());
 		mv.addObject("lastName", emp.getLastName());
 		mv.addObject("department", emp.getDepartment());
-		service.update(emp);
+		
 		return mv;
 	}
 	@GetMapping("/deleteemployee/{id}")

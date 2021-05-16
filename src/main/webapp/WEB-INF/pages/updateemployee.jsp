@@ -25,6 +25,11 @@
 						<br style="clear: both">
 						<h3>Update an Employee</h3>
 						<div class="form-group">
+						
+							<form:input type="text" class="form-control" path="empId"
+								name="empId" placeholder="${emp.empId}" readonly="true"/> 
+						</div> 
+						<div class="form-group">
 							<form:input type="text" class="form-control" path="firstName"
 								name="name" placeholder="${emp.firstName}" />
 						</div>
@@ -32,10 +37,10 @@
 							<form:input type="text" class="form-control" path="lastName"
 								name="lastName" placeholder="${emp.lastName}" />
 						</div>
-											 <div class="form-group">
-							<form:input type="text" class="form-control" path="startDate"
-								name="startdate" placeholder="${emp.startDate}" /> 
-						</div>
+<%-- 										 <div class="form-group">
+							<form:input type="date" class="form-control" path="startDate"
+								name="startdate" placeholder="${emp.startDate}" readonly="true"/> 
+						</div>  --%>
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
 								name="subject" placeholder="${emp.title}" />

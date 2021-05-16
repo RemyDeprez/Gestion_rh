@@ -60,6 +60,7 @@
 							 		<span class="glyphicon glyphicon-remove"></span> Del</a>
 								</td>
 						</tr>
+						<tr></tr>
 					</tbody>
 					</c:forEach>
 				</table>

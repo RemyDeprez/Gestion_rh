@@ -32,24 +32,25 @@
 							<form:input type="text" class="form-control" path="lastName"
 								name="lastName" placeholder="Last Name" />
 						</div>
-						<%-- <div class="form-group">
+<%-- 						 <div class="form-group">
 							<form:input type="date" class="form-control" path="startDate"
 								name="startdate" placeholder="Start Date" />
-						</div>   --%>
+						</div>  --%>  
 						<div class="form-group">
 							<form:input type="text" class="form-control" path="title"
 								name="subject" placeholder="Title" />
 						</div>
-						<div class="form-group">
-							<select id="managers" name="managers">
+<%-- 						<div class="form-group">
+						
+							<form:select id="managers" name="managers" class="form-control" path="employee" >
 								<option>Select a Manager</option>
 								<c:forEach items="${listManager}" var="listManager">
 									<option>
 										<c:out value="${listManager.firstName}" />
 									</option>
 								</c:forEach>
-							</select>
-							</div>
+							</form:select>
+							</div> --%>
 							<%-- 						<div class="form-group">
 							<form:input type="text" class="form-control" path="department"
 								name="subject" placeholder="Departement" />

@@ -1,5 +1,5 @@
 <link href="/style/style.css" rel="stylesheet">
-
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <header>
 	<nav
 		class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
@@ -13,12 +13,12 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item "><a class="nav-link" href="gethome">
-						<i class="fa fa-home"></i> Home </li>
+						<i class="fa fa-home"></i><spring:message code="label.home" /> </li>
 				<li class="nav-item"><a class="nav-link" href="getcontact">
-						<i class="fa fa-envelope-o"> </i> Contact
+						<i class="fa fa-envelope-o"> </i> <spring:message code="label.contact" />
 				</a></li>
 				<li class="nav-item"><a class="nav-link " href="getwho">
-						<i class="fa fa-envelope-o"> </i> Who am I ?
+						<i class="fa fa-envelope-o"> </i><spring:message code="label.who" />
 				</a></li>
 		</div>
 	</nav>
