@@ -13,14 +13,14 @@
 
 <link href="style.css" rel="stylesheet">
 
-<title>Settings</title>
+<title><spring:message code="label.titleupdate" /></title>
 
 <jsp:include page="header.jsp" />
 
 <body>
-	<h3 style="margin-top: 25px; text-align: center;">Settings</h3>
+	<h3 style="margin-top: 25px; text-align: center;"><spring:message code="label.titleupdate" /></h3>
 					<button style="margin-right: 150px; text-align: center;" id="settingbtn" class="btn btn-info float-right"
-					type="submit">Update</button>
+					type="submit"><spring:message code="label.update" /></button>
 	<div class="span7">
 		<div class="widget stacked widget-table action-table"
 			style="width: 80%; margin: auto; padding-top: 5%;">
@@ -36,12 +36,11 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Start Date</th>
-								<th>Title</th>
-								<th>Departement</th>
-								<th>Switch Manager</th>
+							<th><spring:message code="label.firstname" /></th>
+							<th><spring:message code="label.lastname" /></th>
+							<th><spring:message code="label.startdate" /></th>
+							<th><spring:message code="label.title" /></th>
+							<th><spring:message code="label.switch" /></th>
 							</tr>
 						</thead>
 						<c:forEach items="${listUnManaged}" var="listUnManaged">
@@ -52,13 +51,12 @@
 									<td><c:out value="${listUnManaged.lastName}" /></td>
 									<td><c:out value="${listUnManaged.startDate}" /></td>
 									<td><c:out value="${listUnManaged.title}" /></td>
-									<td></td>
 								<%--<td><c:out value="${listEmployee.department.name}"/></td>
 									<td><c:out value="${listEmployee.manager.empid}"/></td> --%>
 									
 										
 										<td><select id="managers" name="managers">
-										<option>Select a Manager</option>
+										<option><spring:message code="label.switch" /></option>
 										<c:forEach items="${listManager}" var="listManager">
 											<option>
 												<c:out value="${listManager.firstName} ${listManager.lastName }" />

@@ -14,9 +14,9 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <link href="style.css" rel="stylesheet">
-
+<title><spring:message code="label.titleglobal" /></title>
 <jsp:include page="header.jsp" />
-<h3 style="margin-top: 25px; text-align: center;">Global List</h3>
+<h3 style="margin-top: 25px; text-align: center;"><spring:message code="label.titleglobal" /></h3>
 <body>
 	<div class="btn-toolbar"></div>
 	<div class="span7">
@@ -25,8 +25,7 @@
 			style="width: 80%; margin: auto; padding-top: 5%;">
 			<div class="widget-header">
 				
-					<a href="addemployee" class="btn btn-info float-right" type="submit" >Add
-						an Employee</a>
+					<a href="addemployee" class="btn btn-info float-right" type="submit" ><spring:message code="label.add" /></a>
 				
 				<i class="icon-th-list"></i>
 			</div>
@@ -38,12 +37,12 @@
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Start Date</th>
-							<th>Title</th>
-							<th>Departement Id</th>
-							<th>Superior </th> 
+							<th><spring:message code="label.firstname" /></th>
+							<th><spring:message code="label.lastname" /></th>
+							<th><spring:message code="label.startdate" /></th>
+							<th><spring:message code="label.title" /></th>
+							<th><spring:message code="label.departement" /></th>
+							<th><spring:message code="label.superiorname" /></th> 
 							
 							<th class="td-actions">Actions</th>
 						</tr>
@@ -61,13 +60,14 @@
 								<td><c:out value="${listEmployee.employee.firstName}" /></td>
 								<td class="text-center">
 							 		<a class='btn btn-info btn-xs' href="updateemployee/${listEmployee.empId}">
-							 		<span class="glyphicon glyphicon-edit"></span> Edit</a>
-							 		<a href="deleteemployee/${listEmployee.empId}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">
-							 		<span class="glyphicon glyphicon-remove" ></span> Del</a>
+							 		<span class="glyphicon glyphicon-edit"></span><spring:message code="label.edit" /></a>
+							 		<a href="deleteemployee/${listEmployee.empId}" class="btn btn-danger btn-xs" onclick="return confirm('<spring:message code="label.confirmmessage" />')">
+							 		<span class="glyphicon glyphicon-remove" ></span><spring:message code="label.del" /></a>
 								</td>
 								
 						
 						</tr>
+						<tr></tr>
 						<tr></tr>
 					</tbody>
 					</c:forEach>

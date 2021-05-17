@@ -132,10 +132,6 @@ public class ListController {
 		emp.setStartDate(new Date());
 		System.out.println(emp);
 		service.update(emp);
-		
-		
-		
-
 		return"redirect:/getemployeeonly";
 	}
 	

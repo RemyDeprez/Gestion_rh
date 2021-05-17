@@ -10,10 +10,10 @@
 <link href="style.css" rel="stylesheet">
 <!------ Include the above in your HEAD tag ---------->
 <jsp:include page="header.jsp" />
-<title>Who am I ?</title>
+<title><spring:message code="label.who" /></title>
 
 
-<h3 style="margin-top: 25px; text-align: center;">Who am I ?</h3>
+<h3 style="margin-top: 25px; text-align: center;"><spring:message code="label.who" /></h3>
 
 <body>
   <p style="width:80%;margin:auto;padding-top: 2%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem nunc, tempor eget tempor at, dictum eu risus. Curabitur tempor tellus at quam ultricies, eu dignissim ipsum volutpat. Vestibulum vestibulum placerat odio at gravida. Morbi in sodales risus. Proin a ex id magna mattis euismod. Vestibulum iaculis faucibus metus in tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec lorem urna, molestie euismod tortor suscipit, placerat feugiat nulla.

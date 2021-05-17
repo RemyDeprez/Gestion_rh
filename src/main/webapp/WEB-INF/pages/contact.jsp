@@ -12,25 +12,25 @@
 <!------ Include the above in your HEAD tag ---------->
 <jsp:include page="header.jsp"/>
 
-<title>Contact Me</title>
+<title><spring:message code="label.contactme" /></title>
 
 <div class="container" style="text-align: center;">
 <div class="col-md-5">
     <div class="form-area">  
         <form role="form">
         <br style="clear:both">
-                    <h3 style="margin-top: 25px; text-align: center;">Contact Me !</h3>
+                    <h3 style="margin-top: 25px; text-align: center;"><spring:message code="label.contactme" /></h3>
     				<div class="form-group">
-						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+						<input type="text" class="form-control" id="name" name="name" placeholder="<spring:message code="label.lastname" />" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+						<input type="text" class="form-control" id="email" name="email" placeholder="E-Mail" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="<spring:message code="label.mobile" />" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+						<input type="text" class="form-control" id="subject" name="subject" placeholder="<spring:message code="label.subject" />" required>
 					</div>
                     <div class="form-group">
                     <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>                    

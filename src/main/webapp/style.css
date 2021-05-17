@@ -428,7 +428,7 @@ vertical-align: middle;
 footer
 {
     text-align:center;
-    position: fixed;
+    position: absolute;
     bottom:0;
     width:100%;
     display:inline-block;
